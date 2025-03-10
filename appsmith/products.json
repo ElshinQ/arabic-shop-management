@@ -1,0 +1,415 @@
+{
+  "unpublishedPage": {
+    "name": "Products",
+    "slug": "products",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1080,
+          "containerStyle": "none",
+          "snapRows": 125,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 1292,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": [
+            {
+              "widgetName": "Header",
+              "backgroundColor": "#0553B1",
+              "rightColumn": 64,
+              "widgetId": "header_widget",
+              "topRow": 0,
+              "bottomRow": 8,
+              "parentRowSpace": 10,
+              "isVisible": true,
+              "type": "CONTAINER_WIDGET",
+              "parentColumnSpace": 19.8125,
+              "dynamicBindingPathList": [],
+              "leftColumn": 0,
+              "children": [
+                {
+                  "widgetName": "Canvas1",
+                  "rightColumn": 1224,
+                  "detachFromLayout": true,
+                  "widgetId": "header_canvas",
+                  "containerStyle": "none",
+                  "topRow": 0,
+                  "bottomRow": 80,
+                  "parentRowSpace": 1,
+                  "isVisible": true,
+                  "type": "CANVAS_WIDGET",
+                  "canExtend": false,
+                  "parentColumnSpace": 1,
+                  "leftColumn": 0,
+                  "children": [
+                    {
+                      "widgetName": "Text1",
+                      "rightColumn": 64,
+                      "widgetId": "header_title",
+                      "topRow": 1,
+                      "bottomRow": 7,
+                      "parentRowSpace": 10,
+                      "isVisible": true,
+                      "fontStyle": "BOLD",
+                      "type": "TEXT_WIDGET",
+                      "textAlign": "RIGHT",
+                      "parentColumnSpace": 19.8125,
+                      "dynamicBindingPathList": [],
+                      "leftColumn": 1,
+                      "text": "إدارة المنتجات",
+                      "fontSize": "HEADING1",
+                      "textColor": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "widgetName": "ProductsContainer",
+              "backgroundColor": "white",
+              "rightColumn": 64,
+              "widgetId": "products_container",
+              "topRow": 9,
+              "bottomRow": 80,
+              "parentRowSpace": 10,
+              "isVisible": true,
+              "type": "CONTAINER_WIDGET",
+              "parentColumnSpace": 19.8125,
+              "dynamicBindingPathList": [],
+              "leftColumn": 0,
+              "children": [
+                {
+                  "widgetName": "Canvas2",
+                  "rightColumn": 1224,
+                  "detachFromLayout": true,
+                  "widgetId": "products_canvas",
+                  "containerStyle": "none",
+                  "topRow": 0,
+                  "bottomRow": 710,
+                  "parentRowSpace": 1,
+                  "isVisible": true,
+                  "type": "CANVAS_WIDGET",
+                  "canExtend": false,
+                  "parentColumnSpace": 1,
+                  "leftColumn": 0,
+                  "children": [
+                    {
+                      "widgetName": "ProductsControls",
+                      "rightColumn": 64,
+                      "widgetId": "products_controls",
+                      "topRow": 1,
+                      "bottomRow": 8,
+                      "parentRowSpace": 10,
+                      "isVisible": true,
+                      "type": "CONTAINER_WIDGET",
+                      "parentColumnSpace": 19.8125,
+                      "dynamicBindingPathList": [],
+                      "leftColumn": 0,
+                      "children": [
+                        {
+                          "widgetName": "Canvas3",
+                          "rightColumn": 1224,
+                          "detachFromLayout": true,
+                          "widgetId": "controls_canvas",
+                          "containerStyle": "none",
+                          "topRow": 0,
+                          "bottomRow": 70,
+                          "parentRowSpace": 1,
+                          "isVisible": true,
+                          "type": "CANVAS_WIDGET",
+                          "canExtend": false,
+                          "parentColumnSpace": 1,
+                          "leftColumn": 0,
+                          "children": [
+                            {
+                              "widgetName": "SearchInput",
+                              "rightColumn": 30,
+                              "widgetId": "search_input",
+                              "topRow": 1,
+                              "bottomRow": 5,
+                              "parentRowSpace": 10,
+                              "isVisible": true,
+                              "type": "INPUT_WIDGET_V2",
+                              "parentColumnSpace": 19.8125,
+                              "dynamicBindingPathList": [],
+                              "leftColumn": 1,
+                              "labelText": "بحث عن منتج",
+                              "labelPosition": "Top",
+                              "labelAlignment": "right",
+                              "labelTextSize": "0.875rem",
+                              "inputType": "TEXT",
+                              "placeholderText": "ابحث باسم المنتج أو الوصف",
+                              "onTextChanged": "{{searchProducts()}}",
+                              "borderRadius": "0.375rem",
+                              "boxShadow": "none"
+                            },
+                            {
+                              "widgetName": "CategoryFilter",
+                              "rightColumn": 45,
+                              "widgetId": "category_filter",
+                              "topRow": 1,
+                              "bottomRow": 5,
+                              "parentRowSpace": 10,
+                              "isVisible": true,
+                              "type": "SELECT_WIDGET",
+                              "parentColumnSpace": 19.8125,
+                              "dynamicBindingPathList": [
+                                {
+                                  "key": "options"
+                                }
+                              ],
+                              "leftColumn": 31,
+                              "labelText": "تصفية حسب الفئة",
+                              "labelPosition": "Top",
+                              "labelAlignment": "right",
+                              "labelTextSize": "0.875rem",
+                              "options": "{{getCategories.data}}",
+                              "placeholderText": "اختر الفئة",
+                              "onOptionChange": "{{filterByCategory()}}",
+                              "borderRadius": "0.375rem",
+                              "boxShadow": "none"
+                            },
+                            {
+                              "widgetName": "AddProductButton",
+                              "rightColumn": 63,
+                              "widgetId": "add_product_button",
+                              "topRow": 1,
+                              "bottomRow": 5,
+                              "parentRowSpace": 10,
+                              "isVisible": true,
+                              "type": "BUTTON_WIDGET",
+                              "parentColumnSpace": 19.8125,
+                              "dynamicBindingPathList": [],
+                              "leftColumn": 46,
+                              "text": "إضافة منتج جديد",
+                              "isDefaultClickDisabled": true,
+                              "buttonColor": "#0553B1",
+                              "buttonVariant": "PRIMARY",
+                              "onClick": "{{showAddProductModal()}}",
+                              "borderRadius": "0.375rem",
+                              "boxShadow": "none"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "widgetName": "ProductsTable",
+                      "rightColumn": 64,
+                      "widgetId": "products_table",
+                      "topRow": 9,
+                      "bottomRow": 70,
+                      "parentRowSpace": 10,
+                      "isVisible": true,
+                      "type": "TABLE_WIDGET_V2",
+                      "parentColumnSpace": 19.8125,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "tableData"
+                        }
+                      ],
+                      "leftColumn": 0,
+                      "tableData": "{{getProducts.data}}",
+                      "primaryColumns": {
+                        "id": {
+                          "index": 0,
+                          "width": 60,
+                          "id": "id",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "رقم",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.id))}}"
+                        },
+                        "name": {
+                          "index": 1,
+                          "width": 150,
+                          "id": "name",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "اسم المنتج",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.name))}}"
+                        },
+                        "price": {
+                          "index": 2,
+                          "width": 100,
+                          "id": "price",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "السعر",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.price))}}"
+                        },
+                        "stock_quantity": {
+                          "index": 3,
+                          "width": 100,
+                          "id": "stock_quantity",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "المخزون",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.stock_quantity))}}"
+                        },
+                        "category": {
+                          "index": 4,
+                          "width": 120,
+                          "id": "category",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "الفئة",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.category))}}"
+                        },
+                        "status": {
+                          "index": 5,
+                          "width": 100,
+                          "id": "status",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "الحالة",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.status))}}"
+                        },
+                        "edit": {
+                          "index": 6,
+                          "width": 100,
+                          "id": "edit",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "button",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "تعديل",
+                          "onClick": "{{showEditProductModal(currentRow)}}",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.edit))}}"
+                        },
+                        "delete": {
+                          "index": 7,
+                          "width": 100,
+                          "id": "delete",
+                          "horizontalAlignment": "RIGHT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "button",
+                          "textSize": "PARAGRAPH",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "حذف",
+                          "onClick": "{{showDeleteProductConfirmation(currentRow)}}",
+                          "buttonColor": "#F22B2B",
+                          "computedValue": "{{ProductsTable.processedTableData.map((currentRow, currentIndex) => ( currentRow.delete))}}"
+                        }
+                      },
+                      "defaultSelectedRowIndex": 0,
+                      "widgetName": "ProductsTable",
+                      "verticalAlignment": "CENTER",
+                      "columnSizeMap": {
+                        "task": 245,
+                        "step": 62,
+                        "status": 75
+                      },
+                      "borderRadius": "0.375rem",
+                      "boxShadow": "0px 0px 4px 3px rgba(0, 0, 0, 0.05)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "policies": [],
+    "isHidden": false
+  },
+  "publishedPage": {
+    "name": "Products",
+    "slug": "products",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 1080,
+          "containerStyle": "none",
+          "snapRows": 125,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 87,
+          "minHeight": 1292,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": []
+        }
+      }
+    ],
+    "policies": [],
+    "isHidden": false
+  },
+  "pageId": "Products",
+  "variables": [],
+  "isHidden": false
+}
